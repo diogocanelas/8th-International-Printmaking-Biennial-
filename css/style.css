@@ -1,0 +1,695 @@
+/* Base Styles -------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #777;
+  margin: 0;
+  font: 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #fafafa;
+}
+
+h1{
+  color:black;
+  margin:20px;
+}
+
+a{
+  color:inherit;
+  text-decoration: none;
+}
+
+#logout{
+  position: absolute;
+  right:50px;
+  top:20px;
+  font-size: 1.1em;
+  color: #222;  
+  cursor: pointer;
+}
+
+#logout:hover{
+  color:#C51E1E;
+}
+
+#wrapper{
+  max-width: 1200px;
+  margin: 0px auto;
+  width:70%;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+#search-form{
+  text-align: center;
+  padding-left: 30px;
+}
+
+.search{
+  background-color:#eee;
+  display: inline-block;
+  width:60%;
+  margin: 0 auto;
+  padding:10px;
+  border-radius: 4px;
+  border:1px solid #eee;
+  font-size: 0.9em;
+  text-align: left;
+  padding-left: 20px;
+  height: 40px;
+  color:#111;
+}
+
+.artist-buttons, .prints-buttons{
+  width:90%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.artist-buttons button, .prints-buttons button{
+  width:180px;
+  color:white;
+  font-size: 0.9em;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 0px 20px;
+  cursor: pointer;
+}
+
+.artist-buttons .fa, .prints-buttons .fa{
+  margin-right: 10px;
+  color:white;
+}
+
+#add-artist, #add-print, #add-inventory{
+  background-color: #228B5B;
+  border: none;
+  border-top:1px solid #127B4B;
+}
+
+#add-inventory{
+  width: 200px;
+}
+
+
+#add-artist:hover, #add-print:hover, #add-inventory:hover{
+  background-color: #329B6B;
+}
+
+#delete-artist, #delete-print, #remove-inventory{
+  background-color: #C51E1E;
+  border: none;
+  border-top:1px solid #b50E0E;
+}
+
+#delete-artist:hover, #delete-print:hover, #remove-inventory:hover{
+  background-color: #D52E2E;
+}
+
+.submit-search{
+  text-align: left;
+  display: inline-block;
+  width: 12%;
+  padding:10px;
+  background-color: gold;
+  border-radius: 4px;
+  border:0px;
+  cursor: pointer;
+  color:#222;
+  text-align: center;
+  font-size: 0.9em;
+  height: 40px;
+}
+
+.submit-search:hover{
+  background-color:#FFE700;
+}
+
+.search-type{
+  text-align: left;
+  padding-left: 80px;
+}
+
+.search-type-link{
+  background-color: #333;
+  padding:5px 20px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  display: inline-block;
+  margin-right:0px;
+  color:white;
+  font-size: 1em;
+  opacity: 0.5;
+}
+
+.search-type-link:hover{
+  opacity: 1;
+  background-color: #000;
+}
+
+.selected{
+  background-color: #000;
+  color: gold;
+  cursor:default;
+  opacity: 1;
+}
+
+.keyword{
+  color:#C51E1E;
+  font-size: 1em;
+  margin-right: 5px;
+  font-weight: 500;
+}
+
+#results{
+  padding: 20px;
+}
+
+.artist{
+  background-color: #fefefe;
+  width:80%;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+.artist:hover{
+  background-color: #222;
+  color:white;
+}
+
+.artist:hover .keyword{
+  color:gold;
+}
+
+select{
+  border:0px;
+  width: 12%;
+  height:39px;
+  font-size: 1em;
+  background-color: #eee;
+  color:#111;
+  font-size: 0.9em;
+  vertical-align: bottom;
+  height: 40px;
+  border:none;
+}
+
+.letter{
+  font-size: 3em;
+  color:#444;
+}
+
+.searched{
+  font-size: 1em;
+  color:steelblue;
+}
+
+.search-divider , .divider{
+  font-size: 1.6em;
+  color:#444;
+  display: block;
+  margin-bottom: 23px;
+}
+
+.search-artists{
+  background-color: #f5f5f5;
+  padding:30px 0px 100px;
+  background-size: center;
+}
+
+.editions-container{
+  display: inline-block;
+  float:right;
+  margin-right: 50px;
+}
+
+.editions{
+  padding: 5px 8px;
+  border-radius:5px;
+  color:white;
+  text-shadow: 0 1px 1px rgba(0,0,0,.5);
+  box-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
+
+
+.edition1{
+  background-color: #193550;
+}
+
+.edition2{
+  background-color: #199EC5;
+}
+
+.edition3{
+  background-color: gold;
+}
+
+.edition4{
+  background-color: #C51E1E;
+}
+
+.edition5{
+  background-color: forestgreen;
+}
+
+.edition6{
+  background-color: #F95F92;
+}
+
+.edition7{
+  background-color: maroon;
+}
+
+
+/* Artist-------------------- */
+
+#artist_page{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.artist-pic{
+  width: 100%;
+  height:300px;
+  background: url("http://www.sjaart.ca/uploads/5/7/0/0/5700221/3771967_orig.jpg") center;
+  background-size: cover;
+}
+
+.page-division{
+  width: 60px;
+  padding: 16px 0px;
+  background-color: #C51E1E;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0px auto 30px;
+}
+
+.blue-division{
+  background-color: #3F4C6B;
+  color:#fff;
+}
+
+.white-division{
+  background-color: #fff;
+  color:#000;
+}
+
+.page-division-title{
+  font-weight: 200;
+  font-size: 0.8em;
+}
+
+.artist-info{
+  padding:30px 80px;
+  font-size: 1.2em;
+  color:#333;
+}
+
+.artist-text{
+  margin-right: 30px;
+  text-align: justify;
+}
+
+.page-title{
+  color:gold;
+  font-size: 2em;
+  font-weight: 500;
+  background-color: #222;
+  margin: 0px;
+  padding:10px 20px;
+}
+
+.artist-prints{
+  background-color: #3F4C6B;
+  padding:30px 0px;
+  text-align: center;
+}
+
+.bienal-edition{
+  color:gold;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 1.4px;
+  text-align: center;
+  background-color: black;
+  padding:5px 0px;
+}
+
+.artist-print{
+  width: 30%;
+  margin: 10px 10px;
+  text-align: center;
+  display: inline-block;
+  border:20px solid rgba(0,0,0,0.4);
+  border-radius: 4px;
+}
+
+.print-pic{
+  border-radius: 5px;
+  width: 100%;
+  height:250px;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/7/7f/Hokusai-fuji7.png") center;
+  background-size: cover;
+}
+
+.print-title{
+  margin: 0px;
+  text-align: center;
+  color:oldlace;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.print-info{
+  font-size: 1em;
+  color:#fafafa;
+  font-weight: 100;
+}
+
+.print-info-key{
+  color:gold;
+}
+
+.gold{
+  color:gold;
+}
+
+.divider{
+  color:#3F4C6B;
+}
+
+
+
+/* Prints-------------------- */
+
+.print{
+  width:30%;
+  display: inline-block;
+  margin: 10px;
+  vertical-align: top;
+  text-align: center;
+}
+
+.print-pic{
+  width:100%;
+}
+
+
+.print-title-small{
+  font-size: 0.7em;
+  color:#444;
+}
+
+.print-title-pic{
+  margin: 0 auto;
+  background: rgba(25,25,25,0.5);
+  padding:5px;
+  text-align: center;
+}
+
+.artist-link .print-title-small{
+  font-weight: bold;
+}
+
+.artist-link .print-title-small:hover{
+  color:red;
+}
+
+
+/* Inventory-------------------- */
+
+
+.print.inventory-version-print{
+  width: 35%;
+  margin: 10px 40px;
+}
+
+.print-title-pic-inventory-version:nth-child(odd){
+  background-color: #199EC5;
+  margin: 0 auto;
+  padding: 4px 0px;
+}
+
+
+/* Login-------------------- */
+
+.login-container{
+  margin:0 auto;
+  width: 35%;
+  background-color: rgba(204, 204, 204, 0.85);
+  margin-top:15%;
+  border-radius: 20px;
+  border: 1px solid #eee;
+  text-align: center;
+  padding: 10px;
+}
+
+.login-input{
+  width:70%;
+  padding:10px;
+  margin: 15px 0px;
+  background-color: white;
+  font-size: 1em;
+  color:#111;
+  border-radius: 5px;
+}
+
+.login-button{
+  margin: 10px auto;
+  width:28%;
+  background-color: #333;
+  color:white;
+  border-radius: 10px;
+  padding:12px;
+  letter-spacing: 2px;
+  display: block;
+  text-transform: uppercase;
+  border: 0px;
+}
+
+.login-button:hover{
+  background-color: #198EC5;
+  cursor: pointer;
+}
+
+.login-container .fa{
+  font-size: 2.5em;
+  color: #333;
+  display: block;
+}
+
+.login-title{
+  font-size: 2em;
+  color:#333;
+  margin: 0px;
+}
+
+/* Insert Artist - Insert Print-------------------- */
+
+.insert{
+  width:100%;
+  padding:30px 0px;
+}
+
+.new-artist , .new-print{
+  display: none;
+  width:77%;
+  padding:30px;
+  margin:  0 auto;
+  border-radius: 20px;
+  background-color: #fefefe;
+  text-align: center;
+}
+
+.new-print{
+  width: 59%;
+  padding:30px 0px;
+}
+
+h2{
+  color:#444;
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 0px;
+}
+
+fieldset{
+  border:none;
+  width: 45%;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 20px;
+}
+
+legend{
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color:#aaa;
+}
+
+.new-artist .fa{
+  color:steelblue;
+  margin: 0px 0px 0px 10px;
+}
+
+.new-artist select, .new-print select{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  font-size: 1em;
+  background:#e8eeef;
+  border-top:1px solid #ddd;
+}
+
+.new-artist label , .new-print label{
+  font-size: 1em;
+  display: block;
+  margin-bottom: 5px;
+  color:#444;
+  text-align: left;
+}
+
+.new-artist input, .new-print input{
+  width: 100%;
+  padding:10px;
+  border:none;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  font-size: 1em;
+  background:#e8eeef;
+  border-top:1px solid #ddd;
+}
+
+.new-artist textarea{
+  background:#e8eeef;
+  width: 100%;
+  border:none;
+  border-top:1px solid #ddd;
+  padding:10px;
+  font-size: 1em;
+  height:216px;
+  margin-bottom: 20px;
+}
+
+.new-artist button, .new-print button{
+  background:#3F4C6B;
+  width:40%;
+  color:white;
+  padding:15px;
+  font-size: 1em;
+  border-radius: 4px;
+  border: 1px solid #2F3C5B;
+  padding: 20px;
+}
+
+.new-artist button:hover, .new-print button:hover{
+  background:#294560;
+  cursor: pointer;
+}
+
+/* Remove Artist-------------------- */
+
+.remove-button{
+  float: left;
+  margin-top: 22px;
+  margin-left: 50px;
+  font-size: 1.5em;
+  color: #C51E1E;
+  margin-right:10px;
+  cursor: pointer;
+}
+
+.remove-print-button{
+  position: absolute;
+  color: #C51E1E;
+  cursor: pointer;
+  margin-top: 90px;
+  margin-left: -50px;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 10px;
+  padding:10px;
+}
+
+.remove-print-button.fa{
+  font-size: 6em;
+}
+
+.remove-button:hover{
+  color:#D52E2E;
+}
+
+.remove-print-button:hover{
+  color:#D52E2E;
+}
+
+.remove-form{
+  display: none;
+}
+
+.remove-print-form{
+  display: none;
+}
+
+/* Flash Message-------------------- */
+
+#feedback {
+  padding: 1px;
+  margin:0px;
+  text-align: center;
+  padding-left: 10px;
+  font-size: 0.9em;
+  font-weight: 500;
+  font-family: "Roboto";
+}
+
+#feedback-top{
+  display: block;
+  padding-left: 20px;
+  font-size: 1em;
+  font-weight: 500;
+  float:left;
+  padding:5px 0px 5px 50px;
+  margin-top:-30px;
+  margin-bottom: 30px;
+  border-radius:5px;
+  border:1px solid #eee;
+  text-align: left;
+}
+
+
+#feedback-top p{
+  margin: 0px;
+}
+
+.fail{
+  background-color: #da594c;
+  color:white;
+  width:100%;
+}
+
+.fail-text{
+  color:tomato;
+}
+
+.success{
+  width:100%;
+  color:white;
+  background-color: rgba(0,128,93,0.8);
+}
+
+.fail-login{
+  color: #da594c;
+  font-weight: bold;
+}
+
+
